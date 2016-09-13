@@ -1,5 +1,6 @@
 require "./enemies/headcrab"
 require "./levels/level"
+require 'super_secret_random_gem'
 
 class Ravenholm < Level
   def initialize(player, difficulty)
@@ -18,7 +19,7 @@ class Ravenholm < Level
     while @headcrabs.any?(&:alive?)
       print_bar
       puts "#{@headcrabs.reject(&:dead?).count} headcrabs remaining"
-      next_enemy.attack(@player) if rand(0..1) < 0.33
+      next_enemy.attack(@player) if SuperSecretRandomGem.some_crazy_method(0.60)
       @player.attack(next_enemy)
       print_bar      
     end
