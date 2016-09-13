@@ -17,11 +17,11 @@ class PointInsertion < Level
     puts "Combine Empire located somewhere in Eastern Europe."
     print_bar
 
-    # while @can
-    #   print_bar
-    #   @civil_protection_officers.first.pick_up_that_can(@player, @can)
-    #   print_bar
-    # end
+    while @can
+      print_bar
+      @civil_protection_officers.first.pick_up_that_can(@player, @can)
+      print_bar
+    end
     
     give_player_crowbar
     puts "You've escaped into the sewers!"

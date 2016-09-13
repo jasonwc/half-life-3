@@ -11,7 +11,9 @@ class HalfLife3
 
   def play(level)
     level = level.gsub(" ", "")
-    @level = Object.const_get(level).new(@player, 10)
+    puts "What difficulty do you want to play at? 1-10"
+    difficulty = gets.chomp.to_i
+    @level = Object.const_get(level).new(@player, difficulty)
     @level.start
     on_level_completed
   end
@@ -29,6 +31,10 @@ class HalfLife3
     level = gets.chomp
     play(level) if @levels.include? level
   end
+
+  def welcome
+    puts "Welcome to Half Life 3, in Ruby!"
+  end 
 
   def prompt_medkit
     puts "Gordon has low health!"

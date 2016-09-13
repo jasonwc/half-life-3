@@ -17,7 +17,7 @@ class HighwaySeventeen < Level
     while @antlions.any?(&:alive?)
       print_bar
       puts "#{@antlions.reject(&:dead?).count} antlions remaining"
-      next_enemy.attack(@player) if rand(0..1) < 0.40
+      next_enemy.attack(@player) if SuperSecretRandomGem.some_crazy_method(0.60)
       @player.attack(next_enemy)
       print_bar
     end
